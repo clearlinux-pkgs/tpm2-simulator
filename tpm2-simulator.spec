@@ -5,8 +5,8 @@
 Name     : tpm2-simulator
 Version  : 1
 Release  : 2
-URL      : https://gigenet.dl.sourceforge.net/project/ibmswtpm2/ibmtpm974.tar.gz
-Source0  : https://gigenet.dl.sourceforge.net/project/ibmswtpm2/ibmtpm974.tar.gz
+URL      : https://sourceforge.net/projects/ibmswtpm2/files/ibmtpm974.tar.gz
+Source0  : https://sourceforge.net/projects/ibmswtpm2/files/ibmtpm974.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : CPL-1.0
