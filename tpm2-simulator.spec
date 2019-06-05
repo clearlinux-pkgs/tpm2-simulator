@@ -4,7 +4,7 @@
 #
 Name     : tpm2-simulator
 Version  : 1
-Release  : 2
+Release  : 3
 URL      : https://sourceforge.net/projects/ibmswtpm2/files/ibmtpm974.tar.gz
 Source0  : https://sourceforge.net/projects/ibmswtpm2/files/ibmtpm974.tar.gz
 Summary  : No detailed summary available
