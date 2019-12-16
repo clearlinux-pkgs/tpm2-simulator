@@ -11,7 +11,7 @@ diff --git a/src/makefile b/src/makefile
 index cc3e410..607fcfc 100644
 --- a/src/makefile
 +++ b/src/makefile
-@@ -81,3 +81,7 @@ clean:
+@@ -81,3 +81,6 @@ clean:
  %.o:		%.c
  		$(CC) $(CCFLAGS) $< -o $@
  

@@ -4,7 +4,7 @@
 #
 Name     : tpm2-simulator
 Version  : 1
-Release  : 4
+Release  : 5
 URL      : https://sourceforge.net/projects/ibmswtpm2/files/ibmtpm1332.tar.gz
 Source0  : https://sourceforge.net/projects/ibmswtpm2/files/ibmtpm1332.tar.gz
 Summary  : No detailed summary available
