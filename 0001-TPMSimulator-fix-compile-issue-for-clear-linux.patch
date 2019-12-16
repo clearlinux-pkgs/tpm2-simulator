@@ -1,36 +1,17 @@
-From 1000c3bf15a2d38d044ac2b507566b50faf7ea14 Mon Sep 17 00:00:00 2001
+From 4d5908c8407e489ece3e415a7d4955956d040636 Mon Sep 17 00:00:00 2001
 From: Shirley Zhao <shirley.zhao@intel.com>
 Date: Mon, 5 Nov 2018 08:44:56 +0000
 Subject: [PATCH] [TPMSimulator]fix compile issue for clear linux
 
-Signed-off-by: Shirley Zhao <shirley.zhao@intel.com>
 ---
- CryptRand.c | 2 --
- makefile    | 3 +++
- 2 files changed, 3 insertions(+), 2 deletions(-)
+ src/makefile | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/CryptRand.c b/CryptRand.c
-index 6989e76..33e5721 100644
---- a/CryptRand.c
-+++ b/CryptRand.c
-@@ -498,12 +498,10 @@ CryptRandomStir(
- 		)
- {
-     DRBG_SEED        tmpBuf;
--    DRBG_SEED        dfResult;
-     //
- #if defined USE_DEBUG_RNG && 1
-     // If doing debug, use the input data as the initial setting for the RNG state
-     // so that the test can be reset at any time.
--    NOT_REFERENCED(dfResult);
-     if(additionalDataSize < 0)
- 	additionalDataSize = 0;
-     else if(additionalDataSize > sizeof(tmpBuf))
-diff --git a/makefile b/makefile
-index 0fd3910..6492b7b 100644
---- a/makefile
-+++ b/makefile
-@@ -78,3 +78,6 @@ clean:
+diff --git a/src/makefile b/src/makefile
+index cc3e410..607fcfc 100644
+--- a/src/makefile
++++ b/src/makefile
+@@ -81,3 +81,7 @@ clean:
  %.o:		%.c
  		$(CC) $(CCFLAGS) $< -o $@
  
@@ -38,5 +19,5 @@ index 0fd3910..6492b7b 100644
 +		install -d $(DESTDIR)/usr/bin
 +		install -t $(DESTDIR)/usr/bin $<
 -- 
-2.19.1
+2.24.0
 

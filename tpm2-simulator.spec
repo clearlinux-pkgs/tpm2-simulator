@@ -4,9 +4,9 @@
 #
 Name     : tpm2-simulator
 Version  : 1
-Release  : 3
-URL      : https://sourceforge.net/projects/ibmswtpm2/files/ibmtpm974.tar.gz
-Source0  : https://sourceforge.net/projects/ibmswtpm2/files/ibmtpm974.tar.gz
+Release  : 4
+URL      : https://sourceforge.net/projects/ibmswtpm2/files/ibmtpm1332.tar.gz
+Source0  : https://sourceforge.net/projects/ibmswtpm2/files/ibmtpm1332.tar.gz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : CPL-1.0
@@ -26,21 +26,35 @@ bin components for the tpm2-simulator package.
 
 
 %prep
-%setup -q -n src
+%setup -q -c -n ibmtpm1332.tar
+cd %{_builddir}/ibmtpm1332.tar
 %patch1 -p1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1541407822
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1576521643
+export GCC_IGNORE_WERROR=1
+export AR=gcc-ar
+export RANLIB=gcc-ranlib
+export NM=gcc-nm
+export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
+pushd src
 make  %{?_smp_mflags}
+popd
+
 
 %install
-export SOURCE_DATE_EPOCH=1541407822
+export SOURCE_DATE_EPOCH=1576521643
 rm -rf %{buildroot}
+pushd src
 %make_install
+popd
 
 %files
 %defattr(-,root,root,-)
